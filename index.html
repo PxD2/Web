@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>100x Better Web Experience</title>
-  <meta name="description" content="Experience a 100x better web design with state-of-the-art features, responsive layouts, and interactive design." />
+  <title>PxD Squared – From Concept to 3D Printed Turbines</title>
+  <meta name="description" content="PxD Squared: A 3D printing company specializing in lithopanes, custom parts, and premium plating (copper, nickel, gold) transforming ideas from concept to 3D printed turbines." />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    /* CSS Reset */
+    /* Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -17,30 +17,29 @@
     html {
       scroll-behavior: smooth;
     }
-    /* CSS Variables for easy theming */
-    :root {
-      --primary-color: #333;
-      --secondary-color: #f4f4f4;
-      --accent-color: #007BFF;
-      --font-family: 'Roboto', sans-serif;
-      --transition-speed: 0.3s;
-    }
     body {
-      font-family: var(--font-family);
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      background-color: var(--secondary-color);
-      color: var(--primary-color);
+      background-color: #f9f9f9;
+      color: #333;
     }
     a {
-      color: var(--primary-color);
       text-decoration: none;
+      color: inherit;
     }
-    /* Container */
     .container {
       width: 90%;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       padding: 0 15px;
+    }
+    /* CSS Variables */
+    :root {
+      --primary-color: #333;
+      --secondary-color: #f9f9f9;
+      --accent-color: #007BFF;
+      --bg-overlay: rgba(0, 0, 0, 0.5);
+      --transition-speed: 0.3s;
     }
     /* Header */
     header {
@@ -76,7 +75,7 @@
     nav ul li a:hover {
       color: var(--accent-color);
     }
-    /* Hamburger Menu */
+    /* Hamburger Menu for Mobile */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -107,13 +106,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: var(--bg-overlay);
     }
     .hero-content {
       position: relative;
       color: #fff;
       z-index: 1;
       animation: fadeIn 1s ease-in-out;
+      max-width: 800px;
+      padding: 0 20px;
     }
     .hero h1 {
       font-size: 3rem;
@@ -157,7 +158,7 @@
       font-size: 1.1rem;
       color: #555;
     }
-    /* Services Section Grid */
+    /* Services/Capabilities Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -182,6 +183,34 @@
     }
     .card p {
       color: #666;
+    }
+    /* Process Section */
+    .process {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .process-step {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform var(--transition-speed);
+    }
+    .process-step:hover {
+      transform: translateY(-5px);
+    }
+    .process-step h4 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+    }
+    .process-step p {
+      font-size: 0.95rem;
+      color: #555;
     }
     /* Contact Form */
     form {
@@ -230,19 +259,10 @@
       text-align: center;
       padding: 20px 0;
     }
-    footer .social-icons {
+    footer p {
       margin: 10px 0;
     }
-    footer .social-icons a {
-      display: inline-block;
-      margin: 0 10px;
-      color: #fff;
-      transition: color var(--transition-speed);
-    }
-    footer .social-icons a:hover {
-      color: var(--accent-color);
-    }
-    /* Responsive */
+    /* Responsive Styles */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -274,12 +294,12 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header with Navigation -->
   <header>
     <div class="container nav-container">
-      <div class="logo">100x Better</div>
+      <div class="logo">PxD Squared</div>
       <nav aria-label="Main Navigation">
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation" tabindex="0">
+        <div class="hamburger" id="hamburger" tabindex="0" aria-label="Toggle Navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -288,6 +308,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -297,36 +318,65 @@
   <!-- Hero Section -->
   <section class="hero" id="home" role="banner">
     <div class="hero-content">
-      <h1>Welcome to the Future of Web Design</h1>
-      <p>Experience a 100x better web experience with cutting-edge design and performance.</p>
-      <a class="btn" href="#services">Explore Services</a>
+      <h1>From Concept to 3D Printed Turbines</h1>
+      <p>PxD Squared delivers state-of-the-art lithopanes, custom parts, and premium plating solutions in copper, nickel, and gold.</p>
+      <a class="btn" href="#services">Discover Our Services</a>
     </div>
   </section>
   
   <!-- About Section -->
   <section id="about">
     <div class="container">
-      <h2>About Us</h2>
-      <p>We are revolutionizing the web with state-of-the-art design, seamless performance, and exceptional user experiences. Our team is passionate about innovation and excellence.</p>
+      <h2>About PxD Squared</h2>
+      <p>At PxD Squared, we blend innovative 3D printing technology with expert craftsmanship. Our expertise in lithopanes, custom parts, and advanced metal plating allows us to transform your ideas into tangible, high-performance products—from initial concept to fully functional 3D printed turbines.</p>
     </div>
   </section>
   
   <!-- Services Section -->
   <section id="services">
     <div class="container">
-      <h2>Our Services</h2>
+      <h2>Our Capabilities</h2>
       <div class="grid">
         <div class="card">
-          <h3>Web Design</h3>
-          <p>Innovative designs that capture your brand's essence and engage your audience.</p>
+          <h3>Custom 3D Printing</h3>
+          <p>Precision engineering and rapid prototyping for parts of any scale.</p>
         </div>
         <div class="card">
-          <h3>Development</h3>
-          <p>Scalable, robust solutions built with the latest technologies to drive your success.</p>
+          <h3>Lithopanes</h3>
+          <p>Artistic and technical lithopane prints that capture intricate details.</p>
         </div>
         <div class="card">
-          <h3>Digital Marketing</h3>
-          <p>Strategic campaigns designed to boost your online presence and drive engagement.</p>
+          <h3>Metal Plating</h3>
+          <p>Expert plating in copper, nickel, and gold to enhance durability and aesthetics.</p>
+        </div>
+        <div class="card">
+          <h3>3D Printed Turbines</h3>
+          <p>From conceptual design to functional 3D printed turbine systems for various applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Process Section -->
+  <section id="process">
+    <div class="container">
+      <h2>Our Process</h2>
+      <div class="process">
+        <div class="process-step">
+          <h4>Concept & Design</h4>
+          <p>We work closely with you to transform ideas into detailed designs.</p>
+        </div>
+        <div class="process-step">
+          <h4>Prototyping</h4>
+          <p>Rapid prototyping to test and refine your concepts using state-of-the-art 3D printing.</p>
+        </div>
+        <div class="process-step">
+          <h4>Custom Fabrication</h4>
+          <p>Precision manufacturing with lithopanes and custom parts featuring premium plating.</p>
+        </div>
+        <div class="process-step">
+          <h4>Final Assembly</h4>
+          <p>Integrating all components into a fully functional product, including 3D printed turbines.</p>
         </div>
       </div>
     </div>
@@ -335,7 +385,8 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <h2>Contact Us</h2>
+      <h2>Get in Touch</h2>
+      <p>Ready to bring your vision to life? Contact us today.</p>
       <form action="#" method="post" aria-label="Contact Form">
         <div class="form-group">
           <label for="name">Name:</label>
@@ -351,44 +402,25 @@
         </div>
         <button type="submit">Send Message</button>
       </form>
+      <p style="margin-top:20px;">Or call us at: <strong>9284576404</strong></p>
+      <p>Email: <strong><a href="mailto:pxdsquared@gmail.com">pxdsquared@gmail.com</a></strong></p>
     </div>
   </section>
   
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 100x Better. All rights reserved.</p>
-      <div class="social-icons" aria-label="Social Media Links">
-        <a href="#" aria-label="Facebook">
-          <svg width="24" height="24" fill="currentColor">
-            <!-- Simple SVG placeholder for Facebook -->
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-        </a>
-        <a href="#" aria-label="Twitter">
-          <svg width="24" height="24" fill="currentColor">
-            <!-- Simple SVG placeholder for Twitter -->
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-        </a>
-        <a href="#" aria-label="Instagram">
-          <svg width="24" height="24" fill="currentColor">
-            <!-- Simple SVG placeholder for Instagram -->
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-        </a>
-      </div>
+      <p>&copy; 2025 PxD Squared. All rights reserved.</p>
     </div>
   </footer>
   
+  <!-- JavaScript for Mobile Navigation -->
   <script>
-    // Hamburger menu toggle for mobile navigation
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
-    // Keyboard accessibility for hamburger menu
     hamburger.addEventListener('keypress', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         navMenu.classList.toggle('active');
