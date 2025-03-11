@@ -10,6 +10,7 @@
             --secondary: #d4af37;
             --dark: #333;
             --light: #f5f5f5;
+            --silver: #C0C0C0;
         }
         
         * {
@@ -304,6 +305,81 @@
             font-size: 0.8rem;
         }
         
+        .benefits-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-text {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .process-steps {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+        
+        .step-number {
+            flex: 0 0 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .silver-highlight {
+            border: 2px solid var(--silver);
+            position: relative;
+        }
+        
+        .silver-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--silver);
+            color: var(--dark);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -339,6 +415,8 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#process">Our Process</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -349,77 +427,166 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Premium Plating & 3D Printing Solutions by PxD<span class="exponent">²</span></h1>
-            <p>From small items to aviation components, we offer expert copper, nickel, gold plating, and advanced 3D printing services that meet the highest industry standards.</p>
-            <a href="#contact" class="btn">Contact Us Today</a>
+            <p>From intricate jewelry to critical aviation components, we deliver expert copper, nickel, silver, gold plating, and advanced 3D printing services that exceed industry standards and bring your vision to life.</p>
+            <a href="#contact" class="btn">Get Your Free Quote Today</a>
         </div>
     </section>
 
     <section id="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <h2 class="section-title">Our Premium Services</h2>
             <div class="services-grid">
                 <div class="service-card service-highlight">
                     <div class="service-badge">NEW</div>
                     <img src="/api/placeholder/400/200" alt="3D Printing Services" class="service-img">
                     <div class="service-content">
                         <h3>3D Printing Services</h3>
-                        <p>State-of-the-art 3D printing for precision components, prototypes, and custom parts with a maximum build volume of 13.78 inches cubed (350mm³).</p>
+                        <p>Transform your digital designs into reality with our state-of-the-art 3D printing technology. Perfect for rapid prototyping, custom components, and small production runs with exceptional detail and precision. Maximum build volume: 13.78 inches cubed (350mm³).</p>
+                    </div>
+                </div>
+                <div class="service-card silver-highlight">
+                    <div class="silver-badge">POPULAR</div>
+                    <img src="/api/placeholder/400/200" alt="Silver Plating" class="service-img">
+                    <div class="service-content">
+                        <h3>Silver Plating</h3>
+                        <p>Enhance your products with our premium silver plating services, providing exceptional electrical conductivity, thermal properties, and an elegant lustrous finish. Ideal for electronics, tableware, musical instruments, and decorative items requiring a brilliant, tarnish-resistant surface.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="/api/placeholder/400/200" alt="Small Items Plating" class="service-img">
                     <div class="service-content">
                         <h3>Small Item Plating</h3>
-                        <p>Precision plating for jewelry, electronics components, and other small items requiring meticulous attention to detail.</p>
+                        <p>Elevate your small items with our meticulous plating services. From intricate jewelry pieces to delicate electronic components, we ensure flawless finishes that enhance both aesthetics and functionality. Our specialized techniques guarantee even coating and superior adhesion on the smallest surfaces.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="/api/placeholder/400/200" alt="Industrial Components" class="service-img">
                     <div class="service-content">
                         <h3>Industrial Components</h3>
-                        <p>Heavy-duty plating solutions for industrial machinery parts, ensuring durability and corrosion resistance.</p>
+                        <p>Extend the life of your industrial components with our heavy-duty plating solutions. Our industrial-grade processes improve wear resistance, prevent corrosion, and maintain dimensional accuracy while meeting strict quality standards. Ideal for machinery parts exposed to harsh environments and continuous operation.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="/api/placeholder/400/200" alt="Aviation Plating" class="service-img">
                     <div class="service-content">
                         <h3>Aviation Components</h3>
-                        <p>Specialized plating services for aviation parts, meeting strict industry regulations and safety standards.</p>
+                        <p>Trust your critical aviation parts to our specialized plating services. We adhere to rigorous aerospace standards (AS9100D compliant) while providing exceptional corrosion protection and wear resistance. Our plating solutions enhance performance and reliability in the demanding aviation environment.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="/api/placeholder/400/200" alt="Copper Plating" class="service-img">
                     <div class="service-content">
                         <h3>Copper Plating</h3>
-                        <p>Superior copper plating services providing excellent electrical conductivity and corrosion protection.</p>
+                        <p>Benefit from our superior copper plating services delivering excellent electrical conductivity, heat transfer, and corrosion protection. Perfect for electronics, circuit boards, and decorative applications requiring a warm metallic finish. Our precision process ensures uniform thickness and exceptional bonding.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="/api/placeholder/400/200" alt="Nickel Plating" class="service-img">
                     <div class="service-content">
                         <h3>Nickel Plating</h3>
-                        <p>Premium nickel plating solutions offering exceptional wear resistance and attractive metallic finish.</p>
+                        <p>Choose our premium nickel plating for outstanding wear resistance, hardness, and corrosion protection. Ideal for automotive parts, industrial equipment, and consumer products. Our nickel plating provides an attractive satin-to-bright finish while extending component lifespan in demanding applications.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <img src="/api/placeholder/400/200" alt="Gold Plating" class="service-img">
                     <div class="service-content">
                         <h3>Gold Plating</h3>
-                        <p>Luxury gold plating services for both decorative applications and industrial components requiring superior conductivity.</p>
+                        <p>Experience our luxury gold plating services for both decorative elegance and industrial performance. Perfect for electronics requiring superior conductivity and corrosion resistance. We offer various karatage options and thickness levels to meet your exact specifications while maintaining exceptional uniformity.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="3d-printing" style="background-color: #eef2f5;">
+    <section id="benefits" style="background-color: #eef2f5;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Services</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚙️</div>
+                    <h3>Precision Engineering</h3>
+                    <p>Our advanced equipment and meticulous techniques ensure consistent quality and exact specifications on every project.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔬</div>
+                    <h3>Quality Control</h3>
+                    <p>Rigorous testing at every stage guarantees exceptional results that meet or exceed industry standards.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Quick Turnaround</h3>
+                    <p>Our efficient processes deliver exceptional results without sacrificing quality, keeping your projects on schedule.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👨‍🔬</div>
+                    <h3>Expert Consultation</h3>
+                    <p>Our specialists provide personalized recommendations for optimal materials and processes for your specific needs.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Certified Excellence</h3>
+                    <p>We maintain strict adherence to industry certifications and standards across all our services.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Environmentally Responsible</h3>
+                    <p>Our processes minimize environmental impact while maintaining premium quality results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="3d-printing">
         <div class="container">
             <h2 class="section-title">3D Printing Capabilities</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p style="margin-bottom: 1.5rem;"><strong>Maximum Build Volume: 13.78 inches cubed (350mm³)</strong></p>
-                <p style="margin-bottom: 1.5rem;">Our advanced 3D printing services offer precision manufacturing for prototypes, custom parts, and low-volume production runs. We utilize the latest in additive manufacturing technology to create high-quality components with exceptional detail and accuracy.</p>
-                <p style="margin-bottom: 1.5rem;">Whether you need functional parts, presentation models, or production-ready components, our 3D printing capabilities can bring your designs to life with quick turnaround times and competitive pricing.</p>
-                <p>We support a wide range of materials including standard and engineering-grade plastics, making our 3D printing services ideal for industries including automotive, aerospace, medical, consumer products, and more.</p>
+                <p style="margin-bottom: 1.5rem;">Our advanced 3D printing services combine cutting-edge technology with expert craftsmanship to deliver precision components, detailed prototypes, and custom parts that exceed expectations. Using the latest in additive manufacturing, we create high-resolution outputs with exceptional structural integrity and surface finish.</p>
+                <p style="margin-bottom: 1.5rem;">From concept validation to end-use parts, our versatile 3D printing capabilities offer rapid turnaround times without compromising on quality or detail. We work with you to optimize designs for printability while maintaining critical features and tolerances.</p>
+                <p>Our comprehensive material selection includes standard and engineering-grade plastics with various mechanical properties, making our 3D printing services ideal for automotive, aerospace, medical, consumer products, and countless other applications requiring precision and reliability.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" style="background-color: #eef2f5;">
+        <div class="container">
+            <h2 class="section-title">Our Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consultation & Requirements Analysis</h3>
+                        <p>We begin with a detailed discussion of your project needs, specifications, and timeline to ensure we fully understand your requirements.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Material & Process Selection</h3>
+                        <p>Our experts recommend the optimal materials and techniques for your specific application, considering factors like durability, appearance, and budget.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Detailed Quoting</h3>
+                        <p>We provide comprehensive, transparent pricing with no hidden fees, ensuring you know exactly what to expect.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Production & Quality Control</h3>
+                        <p>Our skilled technicians execute your project with precision while performing rigorous quality checks throughout the process.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Final Inspection & Delivery</h3>
+                        <p>Each completed project undergoes comprehensive final testing before being carefully packaged and delivered to your specifications.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -428,9 +595,9 @@
         <div class="container">
             <h2 class="section-title">About PxD²</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="margin-bottom: 1.5rem;">At PxD², we pride ourselves on delivering exceptional plating and 3D printing services across a wide range of applications. From the smallest consumer items to critical aviation components, our expertise ensures that every project receives the highest quality treatment.</p>
-                <p style="margin-bottom: 1.5rem;">Our state-of-the-art facilities and experienced technicians allow us to handle projects of any size and complexity. We maintain strict quality control processes and adhere to all industry standards to guarantee customer satisfaction.</p>
-                <p>We're committed to providing timely service, competitive pricing, and outstanding results for all your plating and 3D printing needs.</p>
+                <p style="margin-bottom: 1.5rem;">At PxD², we combine technical expertise with a passion for precision to deliver <span class="highlight-text">exceptional plating and 3D printing services</span> across diverse applications. From intricate jewelry to mission-critical aviation components, our specialized knowledge ensures superior results for every project.</p>
+                <p style="margin-bottom: 1.5rem;">Our state-of-the-art facilities house advanced equipment operated by experienced technicians who maintain strict quality control processes and adhere to all industry standards. This commitment to excellence has earned us a reputation for reliability and customer satisfaction.</p>
+                <p>We pride ourselves on building lasting relationships with our clients through responsive communication, timely service, competitive pricing, and outstanding results. Whether you need a one-time service or ongoing manufacturing support, PxD² is your trusted partner for all plating and 3D printing needs.</p>
             </div>
         </div>
     </section>
@@ -443,13 +610,13 @@
                 <div class="contact-card">
                     <div class="contact-icon">📞</div>
                     <h3>Call Us</h3>
-                    <p>Speak directly with our experts</p>
+                    <p>Speak directly with our experts for immediate assistance</p>
                     <a href="tel:9284576404" class="contact-link">(928) 457-6404</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">✉️</div>
                     <h3>Email Us</h3>
-                    <p>Send us your inquiries anytime</p>
+                    <p>Send detailed inquiries or project specifications anytime</p>
                     <a href="mailto:pxdsquared@gmail.com" class="contact-link">pxdsquared@gmail.com</a>
                 </div>
             </div>
@@ -477,15 +644,16 @@
                         <option value="aviation">Aviation Components</option>
                         <option value="copper">Copper Plating</option>
                         <option value="nickel">Nickel Plating</option>
+                        <option value="silver">Silver Plating</option>
                         <option value="gold">Gold Plating</option>
                         <option value="other">Other/Custom</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" placeholder="Please describe your project, including quantities, dimensions, material, and any specific requirements or timeline needs." required></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit">Request a Quote</button>
             </form>
         </div>
     </section>
@@ -494,7 +662,7 @@
         <div class="container">
             <div class="footer-content">
                 <a href="#" class="logo" style="margin-bottom: 1rem;">PxD<span class="exponent">²</span></a>
-                <p>Your premier partner for quality plating and 3D printing solutions</p>
+                <p>Your premier partner for precision plating and 3D printing solutions</p>
                 
                 <div class="social-links">
                     <a href="https://www.youtube.com/@PxDSquared" target="_blank" class="youtube-link">
@@ -520,7 +688,7 @@
             // Here you would typically add code to handle the form submission
             // Either through AJAX or by redirecting to a thank you page
             
-            alert('Thank you for your message! We will get back to you shortly.');
+            alert('Thank you for your inquiry! We will prepare a custom quote and get back to you shortly.');
             this.reset();
         });
     </script>
