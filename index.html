@@ -23,122 +23,123 @@
         body {
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
+        .container {
+            width: 92%;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+        }
+        
+        /* Header & Navigation */
         header {
             background-color: var(--primary);
             color: white;
-            padding: 1rem 0;
+            padding: 0.7rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
         }
         
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
         }
         
         .exponent {
-            font-size: 1.2rem;
+            font-size: 1rem;
             position: relative;
-            top: -0.7em;
+            top: -0.5em;
         }
         
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         nav ul {
+            display: none;
+            flex-direction: column;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul.show {
             display: flex;
-            list-style: none;
         }
         
         nav ul li {
-            margin-left: 1.5rem;
+            list-style: none;
+            margin: 0.3rem 0;
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
         }
         
-        nav ul li a:hover {
-            color: var(--secondary);
-        }
-        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            background-color: var(--primary);
             color: white;
-            padding: 6rem 0;
+            padding: 3rem 0;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            margin: 0 auto 1.5rem;
         }
         
         .btn {
             display: inline-block;
             background-color: var(--secondary);
             color: var(--dark);
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.4rem;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
+            font-size: 1.1rem;
         }
         
-        .btn:hover {
-            transform: translateY(-3px);
-            background-color: #e5c04e;
-        }
-        
+        /* Sections */
         section {
-            padding: 4rem 0;
+            padding: 2.8rem 0;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2rem;
+            margin-bottom: 1.8rem;
             color: var(--primary);
         }
         
+        /* Services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .service-card {
@@ -146,79 +147,192 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .service-content {
             padding: 1.5rem;
+            position: relative;
         }
         
         .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             color: var(--primary);
         }
         
+        .service-content p {
+            font-size: 1rem;
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .silver-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--silver);
+            color: var(--dark);
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .service-highlight {
+            border: 2px solid var(--secondary);
+        }
+        
+        .silver-highlight {
+            border: 2px solid var(--silver);
+        }
+        
+        /* Benefits */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+        
+        .benefit-item {
+            background-color: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-item p {
+            font-size: 1rem;
+        }
+        
+        /* Process */
+        .process-steps {
+            margin: 1.5rem auto;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            flex: 0 0 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+        }
+        
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .step-content p {
+            font-size: 1rem;
+        }
+        
+        /* About */
+        #about p {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+        
+        .highlight-text {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Contact */
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
         }
         
         .contact-card {
             text-align: center;
-            padding: 2rem;
+            padding: 1.8rem 1rem;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .contact-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .contact-info-text {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
         
         .contact-link {
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             color: var(--primary);
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
         }
         
-        .contact-link:hover {
-            text-decoration: underline;
+        .contact-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.7rem 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 0.8rem;
+            font-size: 1rem;
         }
         
         form {
-            max-width: 600px;
-            margin: 0 auto;
             background-color: white;
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 500;
+            font-size: 1rem;
         }
         
         input, textarea, select {
@@ -230,7 +344,7 @@
         }
         
         textarea {
-            min-height: 150px;
+            min-height: 140px;
             resize: vertical;
         }
         
@@ -238,169 +352,100 @@
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
+            padding: 0.9rem 1.2rem;
+            font-size: 1.1rem;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            width: 100%;
         }
         
-        button:hover {
-            background-color: #154360;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 0;
+        /* Social Media */
+        .social-media {
             text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
         
         .youtube-link {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             color: white;
             text-decoration: none;
             background-color: #FF0000;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1rem;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: bold;
         }
         
-        .youtube-link:hover {
-            background-color: #cc0000;
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .contact-info {
+            margin: 1.2rem 0;
+        }
+        
+        .contact-info a {
+            color: white;
+            font-size: 1.1rem;
         }
         
         .copyright {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
         }
         
-        .service-highlight {
-            border: 2px solid var(--secondary);
-            position: relative;
-        }
-        
-        .service-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        .benefits-list {
+        /* Quick Actions */
+        .quick-actions {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin: 3rem 0;
+            flex-direction: column;
+            gap: 10px;
         }
         
-        .benefit-item {
-            flex: 1;
-            min-width: 250px;
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .benefit-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .highlight-text {
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .process-steps {
-            max-width: 800px;
-            margin: 3rem auto;
-        }
-        
-        .process-step {
-            display: flex;
-            margin-bottom: 2rem;
-            align-items: center;
-        }
-        
-        .step-number {
-            flex: 0 0 50px;
-            height: 50px;
+        .action-button {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background-color: var(--primary);
-            color: white;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-weight: bold;
+            align-items: center;
+            color: white;
+            text-decoration: none;
             font-size: 1.5rem;
-            margin-right: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
-        .step-content {
-            flex: 1;
+        .call-button {
+            background-color: #25D366;
         }
         
-        .silver-highlight {
-            border: 2px solid var(--silver);
-            position: relative;
+        .sms-button {
+            background-color: #4285F4;
         }
         
-        .silver-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: var(--silver);
-            color: var(--dark);
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
+        /* For larger screens */
+        @media (min-width: 600px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            nav ul {
-                flex-direction: column;
-                text-align: center;
+            .benefits-list {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
+            .contact-methods {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -408,11 +453,12 @@
 <body>
     <header>
         <div class="container">
+            <div class="logo-container">
+                <a href="#" class="logo">PxD<span class="exponent">²</span></a>
+                <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            </div>
             <nav>
-                <div class="logo-container">
-                    <a href="#" class="logo">PxD<span class="exponent">²</span></a>
-                </div>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#benefits">Benefits</a></li>
@@ -426,9 +472,9 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <h1>Premium Plating & 3D Printing Solutions by PxD<span class="exponent">²</span></h1>
-            <p>From intricate jewelry to critical aviation components, we deliver expert copper, nickel, silver, gold plating, and advanced 3D printing services that exceed industry standards and bring your vision to life.</p>
-            <a href="#contact" class="btn">Get Your Free Quote Today</a>
+            <h1>Premium Plating & 3D Printing Solutions</h1>
+            <p>Expert copper, nickel, silver, gold plating, and advanced 3D printing services that exceed industry standards.</p>
+            <a href="#contact" class="btn">Get Your Free Quote</a>
         </div>
     </section>
 
@@ -438,60 +484,52 @@
             <div class="services-grid">
                 <div class="service-card service-highlight">
                     <div class="service-badge">NEW</div>
-                    <img src="/api/placeholder/400/200" alt="3D Printing Services" class="service-img">
                     <div class="service-content">
                         <h3>3D Printing Services</h3>
-                        <p>Transform your digital designs into reality with our state-of-the-art 3D printing technology. Perfect for rapid prototyping, custom components, and small production runs with exceptional detail and precision. Maximum build volume: 13.78 inches cubed (350mm³).</p>
+                        <p>Transform designs into reality with state-of-the-art 3D printing. Maximum build volume: 13.78 inches cubed (350mm³).</p>
                     </div>
                 </div>
                 <div class="service-card silver-highlight">
                     <div class="silver-badge">POPULAR</div>
-                    <img src="/api/placeholder/400/200" alt="Silver Plating" class="service-img">
                     <div class="service-content">
                         <h3>Silver Plating</h3>
-                        <p>Enhance your products with our premium silver plating services, providing exceptional electrical conductivity, thermal properties, and an elegant lustrous finish. Ideal for electronics, tableware, musical instruments, and decorative items requiring a brilliant, tarnish-resistant surface.</p>
+                        <p>Enhance products with premium silver plating for excellent conductivity and an elegant finish.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Small Items Plating" class="service-img">
                     <div class="service-content">
                         <h3>Small Item Plating</h3>
-                        <p>Elevate your small items with our meticulous plating services. From intricate jewelry pieces to delicate electronic components, we ensure flawless finishes that enhance both aesthetics and functionality. Our specialized techniques guarantee even coating and superior adhesion on the smallest surfaces.</p>
+                        <p>Elevate jewelry pieces and electronic components with meticulous plating services.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Industrial Components" class="service-img">
                     <div class="service-content">
                         <h3>Industrial Components</h3>
-                        <p>Extend the life of your industrial components with our heavy-duty plating solutions. Our industrial-grade processes improve wear resistance, prevent corrosion, and maintain dimensional accuracy while meeting strict quality standards. Ideal for machinery parts exposed to harsh environments and continuous operation.</p>
+                        <p>Extend component life with heavy-duty plating for improved wear resistance and corrosion prevention.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Aviation Plating" class="service-img">
                     <div class="service-content">
                         <h3>Aviation Components</h3>
-                        <p>Trust your critical aviation parts to our specialized plating services. We adhere to rigorous aerospace standards (AS9100D compliant) while providing exceptional corrosion protection and wear resistance. Our plating solutions enhance performance and reliability in the demanding aviation environment.</p>
+                        <p>AS9100D compliant plating services for critical aviation parts, providing exceptional protection.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Copper Plating" class="service-img">
                     <div class="service-content">
                         <h3>Copper Plating</h3>
-                        <p>Benefit from our superior copper plating services delivering excellent electrical conductivity, heat transfer, and corrosion protection. Perfect for electronics, circuit boards, and decorative applications requiring a warm metallic finish. Our precision process ensures uniform thickness and exceptional bonding.</p>
+                        <p>Superior copper plating offering excellent electrical conductivity and heat transfer properties.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Nickel Plating" class="service-img">
                     <div class="service-content">
                         <h3>Nickel Plating</h3>
-                        <p>Choose our premium nickel plating for outstanding wear resistance, hardness, and corrosion protection. Ideal for automotive parts, industrial equipment, and consumer products. Our nickel plating provides an attractive satin-to-bright finish while extending component lifespan in demanding applications.</p>
+                        <p>Premium nickel plating for outstanding wear resistance, hardness, and corrosion protection.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Gold Plating" class="service-img">
                     <div class="service-content">
                         <h3>Gold Plating</h3>
-                        <p>Experience our luxury gold plating services for both decorative elegance and industrial performance. Perfect for electronics requiring superior conductivity and corrosion resistance. We offer various karatage options and thickness levels to meet your exact specifications while maintaining exceptional uniformity.</p>
+                        <p>Luxury gold plating for decorative elegance and superior industrial performance.</p>
                     </div>
                 </div>
             </div>
@@ -500,196 +538,172 @@
 
     <section id="benefits" style="background-color: #eef2f5;">
         <div class="container">
-            <h2 class="section-title">Why Choose Our Services</h2>
+            <h2 class="section-title">Why Choose Us</h2>
             <div class="benefits-list">
                 <div class="benefit-item">
                     <div class="benefit-icon">⚙️</div>
                     <h3>Precision Engineering</h3>
-                    <p>Our advanced equipment and meticulous techniques ensure consistent quality and exact specifications on every project.</p>
+                    <p>Advanced equipment ensuring consistent quality on every project.</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">🔬</div>
                     <h3>Quality Control</h3>
-                    <p>Rigorous testing at every stage guarantees exceptional results that meet or exceed industry standards.</p>
+                    <p>Rigorous testing at every stage guarantees exceptional results.</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">⏱️</div>
                     <h3>Quick Turnaround</h3>
-                    <p>Our efficient processes deliver exceptional results without sacrificing quality, keeping your projects on schedule.</p>
+                    <p>Efficient processes deliver your projects on time, every time.</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">👨‍🔬</div>
+                    <div class="benefit-icon">👨‍💼</div>
                     <h3>Expert Consultation</h3>
-                    <p>Our specialists provide personalized recommendations for optimal materials and processes for your specific needs.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏆</div>
-                    <h3>Certified Excellence</h3>
-                    <p>We maintain strict adherence to industry certifications and standards across all our services.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌿</div>
-                    <h3>Environmentally Responsible</h3>
-                    <p>Our processes minimize environmental impact while maintaining premium quality results.</p>
+                    <p>Personalized service from industry professionals for optimal results.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="3d-printing">
-        <div class="container">
-            <h2 class="section-title">3D Printing Capabilities</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="margin-bottom: 1.5rem;"><strong>Maximum Build Volume: 13.78 inches cubed (350mm³)</strong></p>
-                <p style="margin-bottom: 1.5rem;">Our advanced 3D printing services combine cutting-edge technology with expert craftsmanship to deliver precision components, detailed prototypes, and custom parts that exceed expectations. Using the latest in additive manufacturing, we create high-resolution outputs with exceptional structural integrity and surface finish.</p>
-                <p style="margin-bottom: 1.5rem;">From concept validation to end-use parts, our versatile 3D printing capabilities offer rapid turnaround times without compromising on quality or detail. We work with you to optimize designs for printability while maintaining critical features and tolerances.</p>
-                <p>Our comprehensive material selection includes standard and engineering-grade plastics with various mechanical properties, making our 3D printing services ideal for automotive, aerospace, medical, consumer products, and countless other applications requiring precision and reliability.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" style="background-color: #eef2f5;">
+    <section id="process">
         <div class="container">
             <h2 class="section-title">Our Process</h2>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Consultation & Requirements Analysis</h3>
-                        <p>We begin with a detailed discussion of your project needs, specifications, and timeline to ensure we fully understand your requirements.</p>
+                        <h3>Initial Consultation</h3>
+                        <p>We discuss your project requirements and provide expert recommendations.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Material & Process Selection</h3>
-                        <p>Our experts recommend the optimal materials and techniques for your specific application, considering factors like durability, appearance, and budget.</p>
+                        <h3>Custom Solution Design</h3>
+                        <p>Our engineers develop a tailored approach for your specific needs.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Detailed Quoting</h3>
-                        <p>We provide comprehensive, transparent pricing with no hidden fees, ensuring you know exactly what to expect.</p>
+                        <h3>Production & Quality Control</h3>
+                        <p>Your project undergoes precision manufacturing with continuous quality checks.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Production & Quality Control</h3>
-                        <p>Our skilled technicians execute your project with precision while performing rigorous quality checks throughout the process.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Final Inspection & Delivery</h3>
-                        <p>Each completed project undergoes comprehensive final testing before being carefully packaged and delivered to your specifications.</p>
+                        <h3>Delivery & Support</h3>
+                        <p>Receive your completed project with ongoing support and maintenance options.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" style="background-color: white;">
+    <section id="about" style="background-color: #eef2f5;">
         <div class="container">
             <h2 class="section-title">About PxD²</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="margin-bottom: 1.5rem;">At PxD², we combine technical expertise with a passion for precision to deliver <span class="highlight-text">exceptional plating and 3D printing services</span> across diverse applications. From intricate jewelry to mission-critical aviation components, our specialized knowledge ensures superior results for every project.</p>
-                <p style="margin-bottom: 1.5rem;">Our state-of-the-art facilities house advanced equipment operated by experienced technicians who maintain strict quality control processes and adhere to all industry standards. This commitment to excellence has earned us a reputation for reliability and customer satisfaction.</p>
-                <p>We pride ourselves on building lasting relationships with our clients through responsive communication, timely service, competitive pricing, and outstanding results. Whether you need a one-time service or ongoing manufacturing support, PxD² is your trusted partner for all plating and 3D printing needs.</p>
-            </div>
+            <p>At <span class="highlight-text">PxD²</span>, we combine advanced plating technologies with state-of-the-art 3D printing capabilities to deliver premium solutions for industries ranging from aerospace to jewelry manufacturing.</p>
+            <p>Our team of certified technicians brings decades of collective experience to every project, ensuring exceptional quality and precision in all our services.</p>
+            <p>We're committed to maintaining the highest standards of quality while providing competitive pricing and exceptional customer service.</p>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
-            
             <div class="contact-methods">
                 <div class="contact-card">
-                    <div class="contact-icon">📞</div>
-                    <h3>Call Us</h3>
-                    <p>Speak directly with our experts for immediate assistance</p>
-                    <a href="tel:9284576404" class="contact-link">(928) 457-6404</a>
+                    <div class="contact-icon">📱</div>
+                    <h3>Call or Text</h3>
+                    <p class="contact-info-text">(928) 457-6404</p>
+                    <a href="tel:9284576404" class="contact-button">Call Now</a>
+                    <a href="sms:9284576404" class="contact-button" style="margin-left: 10px;">Text Now</a>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">✉️</div>
+                    <div class="contact-icon">📧</div>
                     <h3>Email Us</h3>
-                    <p>Send detailed inquiries or project specifications anytime</p>
-                    <a href="mailto:pxdsquared@gmail.com" class="contact-link">pxdsquared@gmail.com</a>
+                    <p class="contact-info-text">Send us your questions or project details</p>
+                    <a href="mailto:info@pxdsquared.com" class="contact-link">info@pxdsquared.com</a>
                 </div>
             </div>
             
-            <form id="contact-form">
+            <div class="social-media">
+                <h3 style="margin-bottom: 1rem;">Follow Us</h3>
+                <a href="https://www.youtube.com/@PxDSquared" class="youtube-link" target="_blank">
+                    <span style="font-size: 1.5rem;">▶</span> YouTube Channel
+                </a>
+            </div>
+            
+            <form>
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone">
                 </div>
                 <div class="form-group">
-                    <label for="service">Service Required</label>
-                    <select id="service" name="service">
-                        <option value="">Select a Service</option>
+                    <label for="service">Service Interested In</label>
+                    <select id="service">
+                        <option value="">Select a service</option>
                         <option value="3d-printing">3D Printing</option>
-                        <option value="small-items">Small Item Plating</option>
+                        <option value="silver-plating">Silver Plating</option>
+                        <option value="copper-plating">Copper Plating</option>
+                        <option value="nickel-plating">Nickel Plating</option>
+                        <option value="gold-plating">Gold Plating</option>
                         <option value="industrial">Industrial Components</option>
                         <option value="aviation">Aviation Components</option>
-                        <option value="copper">Copper Plating</option>
-                        <option value="nickel">Nickel Plating</option>
-                        <option value="silver">Silver Plating</option>
-                        <option value="gold">Gold Plating</option>
-                        <option value="other">Other/Custom</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="message">Project Details</label>
-                    <textarea id="message" name="message" placeholder="Please describe your project, including quantities, dimensions, material, and any specific requirements or timeline needs." required></textarea>
+                    <textarea id="message" placeholder="Tell us about your project..."></textarea>
                 </div>
-                <button type="submit">Request a Quote</button>
+                <button type="submit">Submit Request</button>
             </form>
         </div>
     </section>
 
+    <div class="quick-actions">
+        <a href="tel:9284576404" class="action-button call-button">📞</a>
+        <a href="sms:9284576404" class="action-button sms-button">✉️</a>
+    </div>
+
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <a href="#" class="logo" style="margin-bottom: 1rem;">PxD<span class="exponent">²</span></a>
-                <p>Your premier partner for precision plating and 3D printing solutions</p>
-                
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@PxDSquared" target="_blank" class="youtube-link">
-                        <span>YouTube</span>
-                    </a>
-                </div>
-                
-                <div class="contact-info">
-                    <p>Email: <a href="mailto:pxdsquared@gmail.com" style="color: white;">pxdsquared@gmail.com</a></p>
-                    <p>Phone: <a href="tel:9284576404" style="color: white;">(928) 457-6404</a></p>
-                </div>
-                
-                <p class="copyright">© 2025 PxD². All Rights Reserved.</p>
+            <a href="https://www.youtube.com/@PxDSquared" class="youtube-link" target="_blank">
+                <span style="font-size: 1.5rem;">▶</span> Subscribe to Our Channel
+            </a>
+            <div class="contact-info">
+                <p>Phone: <a href="tel:9284576404">(928) 457-6404</a></p>
+                <p>Email: <a href="mailto:info@pxdsquared.com">info@pxdsquared.com</a></p>
             </div>
+            <p class="copyright">&copy; 2025 PxD². All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Form submission handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here you would typically add code to handle the form submission
-            // Either through AJAX or by redirecting to a thank you page
-            
-            alert('Thank you for your inquiry! We will prepare a custom quote and get back to you shortly.');
-            this.reset();
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Hide menu when clicking a nav link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
         });
     </script>
 </body>
